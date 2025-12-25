@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingItemWidget extends StatelessWidget {
@@ -30,10 +31,7 @@ class OnboardingItemWidget extends StatelessWidget {
           child: Container(
             color: Colors.black.withOpacity(0.4), // Darken the image
             child: BackdropFilter(
-              filter: ColorFilter.mode(
-                Colors.black.withOpacity(0.1),
-                BlendMode.darken,
-              ),
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
